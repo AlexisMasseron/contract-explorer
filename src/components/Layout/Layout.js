@@ -2,6 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 
 import { withStyles } from "@material-ui/core/styles";
+import Paper from "@material-ui/core/Paper";
 
 import LayoutContent from "../../containers/Layout/Content";
 import Sidebar from "../../containers/Sidebar/Sidebar";
@@ -13,6 +14,11 @@ const styles = theme => ({
         display: "flex",
         width: "100%",
         minHeight: "100%"
+    },
+    wrapper: {
+        width: "80%",
+        height: "80%",
+        margin: "100px auto"
     },
     content: {
         width: "100%",
@@ -27,18 +33,20 @@ const styles = theme => ({
     }
 });
 
-const LayoutSkeleton = ({ classes }) => (
+const Layout = ({ classes }) => (
     <div className={classes.frame}>
         <AppBar />
         <Sidebar />
         <div className={classes.content}>
-            <LayoutContent />
+            <Paper className={classes.wrapper} elevation={1}>
+                <LayoutContent />
+            </Paper>
         </div>
     </div>
 );
 
-LayoutSkeleton.propTypes = {
+Layout.propTypes = {
     classes: PropTypes.object.isRequired
 };
 
-export default withStyles(styles)(LayoutSkeleton);
+export default withStyles(styles)(Layout);

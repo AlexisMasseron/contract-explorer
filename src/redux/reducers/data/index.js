@@ -1,5 +1,7 @@
 import { combineReducers } from "redux";
 
+import web3State from "./web3";
+
 export default combineReducers({
-    // data reducers go here
+    web3State
 });

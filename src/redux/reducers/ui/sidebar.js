@@ -1,4 +1,4 @@
-import { OPEN_SIDEBAR, CLOSE_SIDEBAR } from "../../actions/ui";
+import { OPEN_SIDEBAR, CLOSE_SIDEBAR } from "../../actions/constants";
 
 const initialState = {
     open: false

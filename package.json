@@ -1,24 +1,22 @@
 {
-  "name": "boilerplate-react",
-  "version": "0.2.0-dev",
-  "description": "React boilerplate",
+  "name": "contract-explorer",
+  "version": "0.0.1",
+  "description": "ethereum contract scanner",
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com:ConsenSys/boilerplate-react.git"
+    "url": "git+ssh://git@github.com:AlexisMasseron/contract-explorer.git"
   },
   "keywords": [
     "react",
     "boilerplate",
     "consensys"
   ],
-  "author": "ConsenSys France",
+  "author": "Alexis Masseron",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/ConsenSys/boilerplate-react/issues"
-  },
   "dependencies": {
     "@material-ui/core": "^3.1.0",
     "@material-ui/icons": "^3.0.0",
+    "axios": "^0.18.0",
     "connected-react-router": "^6.2.2",
     "history": "^4.7.2",
     "react": "^16.8.2",
@@ -27,7 +25,8 @@
     "react-router": "^4.3.0",
     "react-scripts": "^2.0.0",
     "redux": "^4.0.1",
-    "reselect": "^4.0.0"
+    "reselect": "^4.0.0",
+    "web3": "^1.0.0-beta.52"
   },
   "devDependencies": {
     "enzyme": "^3.7.0",
