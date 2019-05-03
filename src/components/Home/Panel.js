@@ -32,10 +32,15 @@ const styles = theme => ({
     addressInput: {
         marginLeft: "10px"
     },
-    scanButton: {}
+    scanButton: {
+        padding: "14px 18px"
+    },
+    error: {
+        color: "red"
+    }
 });
 
-const component = ({ classes, handleAddress, updateAddress }) => (
+const component = ({ classes, handleAddress, updateAddress, formatError }) => (
     <React.Fragment>
         <div className={classes.homeHeader}>
             <h1 className={classes.homeTitle}>Explore a contract</h1>
@@ -44,6 +49,11 @@ const component = ({ classes, handleAddress, updateAddress }) => (
         <p className={classes.homeIntro}>
             To get started, enter a smart contract address
         </p>
+        {formatError && (
+            <p className={classes.error}>
+                Please enter a valid Ethereum address
+            </p>
+        )}
         <Grid container className={classes.InputWrapper}>
             <Grid item xs={8}>
                 <TextField
@@ -72,6 +82,7 @@ const component = ({ classes, handleAddress, updateAddress }) => (
 
 component.propTypes = {
     classes: PropTypes.object.isRequired,
+    formatError: PropTypes.bool.isRequired,
     handleAddress: PropTypes.func.isRequired,
     updateAddress: PropTypes.func.isRequired
 };

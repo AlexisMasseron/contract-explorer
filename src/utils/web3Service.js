@@ -1,4 +1,5 @@
 import Web3 from "web3";
+import axios from "axios";
 
 const endpoint = process.env.REACT_APP_MAINET_ENDPOINT;
 
@@ -29,4 +30,17 @@ export function logNetwork(netId) {
         default:
             return "Ethereum network";
     }
+}
+
+export function getContract(web3, address) {
+    const key = process.env.REACT_APP_ETHSCAN_KEY;
+    return axios
+        .get(
+            `https://api.etherscan.io/api?module=contract&action=getabi&address=${address}&apikey=${key}`
+        )
+        .then(({ data: { result } }) => {
+            const abi = JSON.parse(result);
+            const contract = web3.eth.Contract(abi, address);
+            return contract;
+        });
 }

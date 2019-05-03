@@ -17,7 +17,6 @@ const styles = theme => ({
     },
     wrapper: {
         width: "80%",
-        height: "80%",
         margin: "100px auto"
     },
     content: {
